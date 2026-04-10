@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Galerie Stylée</title>
+<title>Galerie d'art</title>
 
 <style>
 body {
@@ -105,7 +105,7 @@ button:hover {
 
 <body>
 
-<h1>✨ Ma Galerie Stylée</h1>
+<h1>Galerie D'art</h1>
 
 <div class="gallery">
     <img src="https://picsum.photos/500/300?1" onclick="openModal(0)">
@@ -117,6 +117,7 @@ button:hover {
 <div id="modal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <img id="modalImg">
+    <p id="caption"></p>
 
     <div class="controls">
         <button onclick="prev()">⬅️</button>
@@ -126,10 +127,27 @@ button:hover {
 
 <script>
 const images = [
-    "https://picsum.photos/800/500?1",
-    "https://picsum.photos/800/500?2",
-    "https://picsum.photos/800/500?3",
-    "https://picsum.photos/800/500?4"
+    {
+        src: "https://picsum.photos/800/500?1"
+        text:"laliii"
+    },
+     {
+        src: "https://picsum.photos/800/500?1"
+        text:"laliii"
+    },
+     {
+        src: "https://picsum.photos/800/500?1"
+        text:"laliii"
+    },
+     {
+        src: "https://picsum.photos/800/500?1"
+        text:"laliii"
+    },
+     {
+        src: "https://picsum.photos/800/500?1"
+        text:"laliii"
+    },
+   
 ];
 
 let current = 0;
