@@ -5,6 +5,12 @@
 <title>Galerie d'art</title>
 
 <style>
+
+#caption {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ddd;
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -155,7 +161,8 @@ let current = 0;
 function openModal(index) {
     current = index;
     document.getElementById("modal").style.display = "flex";
-    document.getElementById("modalImg").src = images[current];
+    document.getElementById("modalImg").src = images[current].src;
+    document.getElementById("caption").innerText = images[current].text;
 }
 
 function closeModal() {
