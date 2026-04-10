@@ -111,7 +111,7 @@ button:hover {
 
 <body>
 
-<h1>Gal</h1>
+<h1>Galilé</h1>
 
 <div class="gallery">
     <img src="https://picsum.photos/500/300?1" onclick="openModal(0)">
@@ -150,13 +150,18 @@ const images = [
         text: "Océan infini 🌊"
     }
 ];
+
 let current = 0;
+
+function updateImage() {
+    document.getElementById("modalImg").src = images[current].src;
+    document.getElementById("caption").innerText = images[current].text;
+}
 
 function openModal(index) {
     current = index;
     document.getElementById("modal").style.display = "flex";
-    document.getElementById("modalImg").src = images[current].src;
-    document.getElementById("caption").innerText = images[current].text;
+    updateImage();
 }
 
 function closeModal() {
@@ -165,15 +170,14 @@ function closeModal() {
 
 function next() {
     current = (current + 1) % images.length;
-    document.getElementById("modalImg").src = images[current];
+    updateImage();
 }
 
 function prev() {
     current = (current - 1 + images.length) % images.length;
-    document.getElementById("modalImg").src = images[current];
+    updateImage();
 }
 
-/* Navigation clavier */
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") next();
     if (e.key === "ArrowLeft") prev();
